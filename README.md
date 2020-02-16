@@ -13,8 +13,8 @@ pip3 install requests
 ```
 ./inverse_volatility.py
 Portfolio: ['UPRO', 'TMF'], as of 2020-02-15 (window size is 20 days)
-UPRO allocation ratio: 49.09%, anualized volatility: 39.87%, performance: 5.36%
-TMF allocation ratio: 50.91%, anualized volatility: 38.45%, performance: 11.64%
+UPRO allocation ratio: 49.09% (anualized volatility: 39.87%, performance: 5.36%)
+TMF allocation ratio: 50.91% (anualized volatility: 38.45%, performance: 11.64%)
 ```
 
 Checking against Portfolio Visualizer: ![](UPRO_TMF.png)

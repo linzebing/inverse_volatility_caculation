@@ -20,6 +20,7 @@ TMF allocation ratio: 50.91% (anualized volatility: 38.45%, performance: 11.64%)
 Checking against Portfolio Visualizer: ![](UPRO_TMF.png)
 
 ```
+./inverse_volatility.py upro,voo,edv # comma separated symbols
 Portfolio: ['UPRO', 'VOO', 'EDV'], as of 2020-02-15 (window size is 20 days)
 UPRO allocation ratio: 15.79% (anualized volatility: 39.87%, performance: 5.36%)
 VOO allocation ratio: 47.22% (anualized volatility: 13.33%, performance: 2.06%)

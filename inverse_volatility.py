@@ -17,8 +17,8 @@ else:
 num_trading_days_per_year = 252
 window_size = 20
 date_format = "%Y-%m-%d"
-end_timestamp = int(time.time()) + 1000000
-start_timestamp = int(end_timestamp - 1000000 - (1.4 * (window_size + 1) + 10) * 86400)
+end_timestamp = int(time.time())
+start_timestamp = int(end_timestamp - (1.4 * (window_size + 1) + 4) * 86400)
 
 
 def get_volatility_and_performance(symbol):

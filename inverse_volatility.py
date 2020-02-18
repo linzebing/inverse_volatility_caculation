@@ -1,5 +1,7 @@
 #!/usr/local/bin/python3
 
+# Author: Zebing Lin (https://github.com/linzebing)
+
 from datetime import datetime, date
 import math
 import numpy as np
@@ -36,7 +38,7 @@ def get_volatility_and_performance(symbol):
         volatilities_in_window.append(math.log(prices[i] / prices[i+1]))
         
     most_recent_date = datetime.strptime(lines[-1].split(',')[0], date_format).date()
-    assert (date.today() - most_recent_date).days <= 2, "today is {}, most recent trading day is {}".format(today, most_recent_date)
+    assert (date.today() - most_recent_date).days <= 4, "today is {}, most recent trading day is {}".format(date.today(), most_recent_date)
 
     return np.std(volatilities_in_window, ddof = 1) * np.sqrt(num_trading_days_per_year), prices[0] / prices[20] - 1.0
 

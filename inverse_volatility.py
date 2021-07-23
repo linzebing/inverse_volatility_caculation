@@ -24,8 +24,13 @@ start_timestamp = int(end_timestamp - (1.4 * (window_size + 1) + 4) * 86400)
 
 
 def get_volatility_and_performance(symbol):
-    download_url = "https://query1.finance.yahoo.com/v7/finance/download/{}?period1={}&period2={}&interval=1d&events=history&crumb=a7pcO//zvcW".format(symbol, start_timestamp, end_timestamp)
-    lines = requests.get(download_url, cookies={'B': 'chjes25epq9b6&b=3&s=18'}).text.strip().split('\n')
+    download_url = "https://query1.finance.yahoo.com/v7/finance/download/{}?period1={}&period2={}&interval=1d&events=history".format(symbol, start_timestamp, end_timestamp)
+    lines = requests.get(
+        download_url,
+        headers={
+            'User-Agent':
+            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2866.71 Safari/537.36'
+        }).text.strip().split('\n')
     assert lines[0].split(',')[0] == 'Date'
     assert lines[0].split(',')[4] == 'Close'
     prices = []
